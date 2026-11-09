@@ -12,8 +12,7 @@ a{color:inherit}.wrap{width:min(1120px,92%);margin:auto}
 header{background:var(--white);position:sticky;top:0;z-index:10;box-shadow:0 2px 14px #0e20501a}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:10px 0}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;color:var(--navy);line-height:1.2}
-.brand img{width:58px;height:58px;object-fit:contain;border-radius:50%}
-.brand small{display:block;font-size:12px;font-weight:600;color:#52618e}
+.brand img{width:58px;height:58px;object-fit:contain;border-radius:50%}.brand small{display:block;font-size:12px;font-weight:600;color:#52618e}
 nav{display:flex;gap:20px;align-items:center;flex-wrap:wrap}nav a{text-decoration:none;font-weight:700;font-size:14px;color:var(--navy)}
 .btn{display:inline-block;padding:13px 20px;border-radius:999px;background:var(--yellow);color:var(--navy);font-weight:800;text-decoration:none;box-shadow:0 5px 0 #d7b817;transition:.2s}
 .btn:hover{transform:translateY(-2px)}.btn-blue{background:var(--blue);color:white;box-shadow:0 5px 0 #1878a7}
@@ -35,14 +34,15 @@ section{padding:76px 0}.section-title{text-align:center;margin:0 auto 14px;color
 .program{padding:28px;border-radius:20px;background:#fff;border-top:7px solid var(--yellow);box-shadow:0 8px 24px #142b7010}
 .program:nth-child(2){border-color:var(--blue)}.program h3{font-size:23px;color:var(--navy);margin:0 0 8px}
 .feature-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.feature{background:#fff;border-radius:16px;padding:20px;border-left:5px solid var(--yellow);box-shadow:0 6px 20px #142b700d}
-.feature h3{margin:0 0 6px;color:var(--navy);font-size:18px}.feature p{margin:0;color:#52607f}
+.feature{display:flex;flex-direction:column;align-items:flex-start;background:#fff;border-radius:16px;padding:20px;border-left:5px solid var(--yellow);box-shadow:0 6px 20px #142b700d}
+.feature h3{margin:0 0 8px;color:var(--navy);font-size:21px;line-height:1.3}.feature p{margin:0;color:#52607f}
+.gallery-btn{display:inline-block;margin-top:18px;padding:9px 16px;border-radius:999px;background:var(--navy);color:#fff;font-size:14px;font-weight:700;text-decoration:none;transition:background .2s,transform .2s}
+.gallery-btn:hover,.gallery-btn:focus-visible{background:var(--blue);transform:translateY(-2px)}
 .cta{background:var(--navy);color:white;text-align:center;padding:68px 0}
 .cta h2{font-size:clamp(28px,4vw,42px);line-height:1.15;margin:0 0 12px;color:var(--yellow)}
 .cta p{max-width:680px;margin:0 auto 24px;color:#eef2ff;font-size:17px}
 .contact-links{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-footer{background:#101e50;color:#dbe4ff;padding:24px 0;text-align:center;font-size:14px}
-footer strong{color:#fff}
+footer{background:#101e50;color:#dbe4ff;padding:24px 0;text-align:center;font-size:14px}footer strong{color:#fff}
 .floating{position:fixed;right:18px;bottom:18px;background:var(--green);color:#fff;padding:13px 18px;border-radius:99px;text-decoration:none;font-weight:800;box-shadow:0 8px 24px #0003;z-index:20}
 @media(max-width:760px){.nav{align-items:flex-start}.nav nav{display:none}.hero-grid{grid-template-columns:1fr;padding:42px 0 28px;text-align:center}.hero p{margin:auto}.hero-actions{justify-content:center}.mascot-frame{min-height:0}.mascot-frame img{max-height:430px;width:min(88%,360px)}.cards{grid-template-columns:1fr}.programs,.feature-list{grid-template-columns:1fr}section{padding:56px 0}.brand img{width:48px;height:48px}}
 </style>
@@ -64,7 +64,7 @@ footer strong{color:#fff}
       <h1>O futuro do seu filho <em>começa aqui!</em></h1>
       <p>Do Maternal ao 9º ano, uma jornada de aprendizado, descobertas e oportunidades em Pinheiral/RJ.</p>
       <div class="hero-actions">
-        <a class="btn" href="https://wa.me/5524998826636?text=Ol%C3%A1%21%20Quero%20informa%C3%A7%C3%B5es%20sobre%20matr%C3%ADculas." target="_blank" rel="noopener">Quero informações sobre matrícula</a>
+        <a class="btn" href="https://wa.me/5524998826636?text=Ol%C3%A1%21%20Quero%20informa%C3%A7%C3%B5es%20sobre%20matr%C3%ADculas." target="_blank" rel="noopener">Quero informações sobre matrículas</a>
         <a class="btn btn-blue" href="#diferenciais">Conheça nossos diferenciais</a>
       </div>
     </div>
@@ -89,18 +89,18 @@ footer strong{color:#fff}
     <h2 class="section-title">Diferenciais que fazem a diferença</h2>
     <p class="lead">Conheça os recursos e projetos apresentados pela escola para apoiar a aprendizagem e a tranquilidade das famílias.</p>
     <div class="feature-list">
-      <article class="feature"><h3 style="font-size: 26px;">🛡️ Segurança e acompanhamento</h3><p><strong>Câmeras ao vivo na sala de aula:</strong> acompanhamento da rotina pelo aplicativo da escola.</p></article>
-      <article class="feature"><h3 style="font-size: 26px;">📱 Aplicativo integrado</h3><p>Consulta de notas, faltas, tarefas e comunicados em um só lugar.</p></article>
-      <article class="feature"><h3 style="font-size: 26px;">🤝 Seguro de acidentes</h3><p>Seguro de acidentes com cobertura nacional, 24 horas, conforme as condições e a rede credenciada da apólice.</p></article>
-      <article class="feature"><h3 style="font-size: 26px;">📘 Sistema de Ensino Positivo</h3><p>Material e proposta pedagógica do Sistema Positivo de Ensino.</p></article>
-      <article class="feature"><h3 style="font-size: 26px;">💻 Plataforma Online Positivo</h3><p>Videoaulas, jogos educativos, histórias digitais, QR Codes e recursos de realidade aumentada, conforme a etapa atendida.</p></article>
-      <article class="feature"><h3 style="font-size: 26px;">🤖 Projeto Robótica</h3><p>Para estudantes do 6º ao 9º ano: programação, criação de robôs, raciocínio lógico e trabalho em equipe.</p></article>
-      <article class="feature"><h3 style="font-size: 26px;">🧠 Projeto Super Cérebro</h3><p>Para estudantes do 1º ao 5º ano: desafios, jogos e Soroban para estimular concentração e agilidade mental.</p></article>
-      <article class="feature"><h3 style="font-size: 26px;">🏅 Olimpíadas nacionais</h3><p>Incentivo à participação no Concurso Canguru de Matemática e na Olimpíada Brasileira de Astronomia (OBA).</p></article>
-      <article class="feature"><h3 style="font-size: 26px;">❤️ Sala AEE e suporte socioemocional</h3><p>Atendimento Educacional Especializado e acompanhamento psicopedagógico, conforme a necessidade dos alunos.</p></article>
-      <article class="feature"><h3 style="font-size: 26px;">🌐 Inglês e Espanhol</h3><p>Aulas de idiomas na grade curricular para ampliar repertório e horizontes culturais.</p></article>
-      <article class="feature"><h3 style="font-size: 26px;">⚽ Esporte</h3><p>Aulas específicas com foco em técnica, disciplina, movimento e saúde, além da Educação Física.</p></article>
-      <article class="feature"><h3 style="font-size: 26px;">🎵 Educação musical</h3><p>Vivências musicais para estimular criatividade, sensibilidade e coordenação motora.</p></article>
+      <article class="feature"><h3>🛡️ Segurança e acompanhamento</h3><p><strong>Câmeras ao vivo na sala de aula:</strong> acompanhamento da rotina pelo aplicativo da escola.</p><a class="gallery-btn" href="galeria.html#seguranca">Ver fotos</a></article>
+      <article class="feature"><h3>📱 Aplicativo integrado</h3><p>Consulta de notas, faltas, tarefas e comunicados em um só lugar.</p><a class="gallery-btn" href="galeria.html#aplicativo">Ver fotos</a></article>
+      <article class="feature"><h3>🤝 Seguro de acidentes</h3><p>Seguro de acidentes com cobertura nacional, 24 horas, conforme as condições e a rede credenciada da apólice.</p><a class="gallery-btn" href="galeria.html#seguro">Ver fotos</a></article>
+      <article class="feature"><h3>📘 Sistema de Ensino Positivo</h3><p>Material e proposta pedagógica do Sistema Positivo de Ensino.</p><a class="gallery-btn" href="galeria.html#sistema-positivo">Ver fotos</a></article>
+      <article class="feature"><h3>💻 Plataforma Online Positivo</h3><p>Videoaulas, jogos educativos, histórias digitais, QR Codes e recursos de realidade aumentada, conforme a etapa atendida.</p><a class="gallery-btn" href="galeria.html#plataforma-positivo">Ver fotos</a></article>
+      <article class="feature"><h3>🤖 Projeto Robótica</h3><p>Para estudantes do 6º ao 9º ano: programação, criação de robôs, raciocínio lógico e trabalho em equipe.</p><a class="gallery-btn" href="galeria.html#robotica">Ver fotos</a></article>
+      <article class="feature"><h3>🧠 Projeto Super Cérebro</h3><p>Para estudantes do 1º ao 5º ano: desafios, jogos e Soroban para estimular concentração e agilidade mental.</p><a class="gallery-btn" href="galeria.html#super-cerebro">Ver fotos</a></article>
+      <article class="feature"><h3>🏅 Olimpíadas nacionais</h3><p>Incentivo à participação no Concurso Canguru de Matemática e na Olimpíada Brasileira de Astronomia (OBA).</p><a class="gallery-btn" href="galeria.html#olimpiadas">Ver fotos</a></article>
+      <article class="feature"><h3>❤️ Sala AEE e suporte socioemocional</h3><p>Atendimento Educacional Especializado e acompanhamento psicopedagógico, conforme a necessidade dos alunos.</p><a class="gallery-btn" href="galeria.html#aee">Ver fotos</a></article>
+      <article class="feature"><h3>🌐 Inglês e Espanhol</h3><p>Aulas de idiomas na grade curricular para ampliar repertório e horizontes culturais.</p><a class="gallery-btn" href="galeria.html#idiomas">Ver fotos</a></article>
+      <article class="feature"><h3>⚽ Esporte</h3><p>Aulas específicas com foco em técnica, disciplina, movimento e saúde, além da Educação Física.</p><a class="gallery-btn" href="galeria.html#esporte">Ver fotos</a></article>
+      <article class="feature"><h3>🎵 Educação musical</h3><p>Vivências musicais para estimular criatividade, sensibilidade e coordenação motora.</p><a class="gallery-btn" href="galeria.html#educacao-musical">Ver fotos</a></article>
     </div>
   </div>
 </section>
