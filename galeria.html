@@ -39,6 +39,8 @@
     main { padding: 64px 0 80px; }
     h1 { margin: 0; color: var(--navy); text-align: center; font-size: clamp(32px, 5vw, 48px); line-height: 1.15; }
     .intro { max-width: 700px; margin: 14px auto 36px; text-align: center; color: #52607f; }
+    .gallery-category { padding: 28px 0; scroll-margin-top: 20px; }
+    .gallery-category h2 { margin: 0 0 16px; color: var(--navy); font-size: clamp(22px, 3vw, 30px); }
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
@@ -56,21 +58,23 @@
     .photo figcaption { padding: 12px 15px; color: var(--navy); font-weight: 700; }
     .empty {
       display: grid;
-      min-height: 220px;
+      min-height: 150px;
       place-items: center;
-      padding: 24px;
+      padding: 20px;
       color: #52607f;
       text-align: center;
       border: 2px dashed #b9c7e6;
       border-radius: 16px;
       background: #fff;
     }
+    .empty p { margin: 0; }
     footer { padding: 22px 0; background: #101e50; color: #dbe4ff; text-align: center; }
 
     @media (max-width: 600px) {
       .nav { min-height: 68px; }
       main { padding: 44px 0 56px; }
       .gallery { gap: 14px; }
+      .gallery-category { padding: 20px 0; }
     }
   </style>
 </head>
@@ -78,27 +82,64 @@
   <header>
     <div class="wrap nav">
       <a class="brand" href="index.html">Escola Córa Monteiro da Silva</a>
-      <a class="back-link" href="index.html">Voltar ao início</a>
+      <a class="back-link" href="index.html#diferenciais">Voltar aos diferenciais</a>
     </div>
   </header>
 
   <main class="wrap">
     <h1>Galeria de fotos</h1>
-    <p class="intro">Um pouco da nossa escola, dos projetos e dos momentos de aprendizagem.</p>
+    <p class="intro">Veja fotos dos projetos, atividades e espaços da Escola Córa Monteiro da Silva.</p>
 
-    <div class="gallery" aria-label="Fotos da escola">
-      <!-- Para adicionar uma foto, coloque o arquivo em imagens/galeria/ e duplique este figure.
-           Troque o src pelo caminho da imagem e escreva uma descrição no alt e na legenda. -->
-      <figure class="empty">
-        <p>Adicione fotos na pasta <strong>imagens/galeria/</strong> e substitua este espaço pelo bloco de foto indicado no código.</p>
-      </figure>
-      <!-- Exemplo:
-      <figure class="photo">
-        <img src="imagens/galeria/festa-junina.jpg" alt="Alunos participando da festa junina" loading="lazy">
-        <figcaption>Festa junina na escola</figcaption>
-      </figure>
-      -->
-    </div>
+    <!-- Coloque as imagens em imagens/galeria/ e adicione um figure.photo na categoria correspondente.
+         Exemplo: <figure class="photo"><img src="imagens/galeria/foto.jpg" alt="Descrição da foto" loading="lazy"><figcaption>Legenda</figcaption></figure> -->
+    <section class="gallery-category" id="seguranca">
+      <h2>Segurança e acompanhamento</h2>
+      <div class="gallery"><div class="empty"><p>Em breve, fotos de segurança e acompanhamento.</p></div></div>
+    </section>
+    <section class="gallery-category" id="aplicativo">
+      <h2>Aplicativo integrado</h2>
+      <div class="gallery"><div class="empty"><p>Em breve, fotos do aplicativo integrado.</p></div></div>
+    </section>
+    <section class="gallery-category" id="seguro">
+      <h2>Seguro de acidentes</h2>
+      <div class="gallery"><div class="empty"><p>Em breve, informações e imagens sobre o seguro.</p></div></div>
+    </section>
+    <section class="gallery-category" id="sistema-positivo">
+      <h2>Sistema de Ensino Positivo</h2>
+      <div class="gallery"><div class="empty"><p>Em breve, fotos do Sistema de Ensino Positivo.</p></div></div>
+    </section>
+    <section class="gallery-category" id="plataforma-positivo">
+      <h2>Plataforma Online Positivo</h2>
+      <div class="gallery"><div class="empty"><p>Em breve, fotos da Plataforma Online Positivo.</p></div></div>
+    </section>
+    <section class="gallery-category" id="robotica">
+      <h2>Projeto Robótica</h2>
+      <div class="gallery"><div class="empty"><p>Em breve, fotos do Projeto Robótica.</p></div></div>
+    </section>
+    <section class="gallery-category" id="super-cerebro">
+      <h2>Projeto Super Cérebro</h2>
+      <div class="gallery"><div class="empty"><p>Em breve, fotos do Projeto Super Cérebro.</p></div></div>
+    </section>
+    <section class="gallery-category" id="olimpiadas">
+      <h2>Olimpíadas nacionais</h2>
+      <div class="gallery"><div class="empty"><p>Em breve, fotos das Olimpíadas nacionais.</p></div></div>
+    </section>
+    <section class="gallery-category" id="aee">
+      <h2>Sala AEE e suporte socioemocional</h2>
+      <div class="gallery"><div class="empty"><p>Em breve, fotos da Sala AEE e atividades de suporte socioemocional.</p></div></div>
+    </section>
+    <section class="gallery-category" id="idiomas">
+      <h2>Inglês e Espanhol</h2>
+      <div class="gallery"><div class="empty"><p>Em breve, fotos das aulas de Inglês e Espanhol.</p></div></div>
+    </section>
+    <section class="gallery-category" id="esporte">
+      <h2>Esporte</h2>
+      <div class="gallery"><div class="empty"><p>Em breve, fotos das atividades esportivas.</p></div></div>
+    </section>
+    <section class="gallery-category" id="educacao-musical">
+      <h2>Educação musical</h2>
+      <div class="gallery"><div class="empty"><p>Em breve, fotos das atividades de Educação musical.</p></div></div>
+    </section>
   </main>
 
   <footer>Escola Córa Monteiro da Silva • Pinheiral – RJ</footer>
