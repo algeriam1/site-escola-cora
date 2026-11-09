@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galeria de fotos da Escola Córa Monteiro da Silva, em Pinheiral - RJ.">
+  <title>Galeria de fotos | Escola Córa Monteiro da Silva</title>
+  <style>
+    :root {
+      --navy: #172b70;
+      --blue: #299fd3;
+      --yellow: #ffdf24;
+      --ink: #17234d;
+      --pale: #f2f6ff;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      line-height: 1.6;
+      background: var(--pale);
+    }
+
+    .wrap { width: min(1120px, 92%); margin: 0 auto; }
+    header { background: #fff; box-shadow: 0 2px 14px #0e20501a; }
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand { color: var(--navy); font-weight: 800; text-decoration: none; }
+    .back-link { color: var(--navy); font-weight: 700; }
+
+    main { padding: 64px 0 80px; }
+    h1 { margin: 0; color: var(--navy); text-align: center; font-size: clamp(32px, 5vw, 48px); line-height: 1.15; }
+    .intro { max-width: 700px; margin: 14px auto 36px; text-align: center; color: #52607f; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+      gap: 18px;
+    }
+    .photo {
+      overflow: hidden;
+      min-height: 220px;
+      margin: 0;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 8px 26px #142b7010;
+    }
+    .photo img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+    .photo figcaption { padding: 12px 15px; color: var(--navy); font-weight: 700; }
+    .empty {
+      display: grid;
+      min-height: 220px;
+      place-items: center;
+      padding: 24px;
+      color: #52607f;
+      text-align: center;
+      border: 2px dashed #b9c7e6;
+      border-radius: 16px;
+      background: #fff;
+    }
+    footer { padding: 22px 0; background: #101e50; color: #dbe4ff; text-align: center; }
+
+    @media (max-width: 600px) {
+      .nav { min-height: 68px; }
+      main { padding: 44px 0 56px; }
+      .gallery { gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="index.html">Escola Córa Monteiro da Silva</a>
+      <a class="back-link" href="index.html">Voltar ao início</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Galeria de fotos</h1>
+    <p class="intro">Um pouco da nossa escola, dos projetos e dos momentos de aprendizagem.</p>
+
+    <div class="gallery" aria-label="Fotos da escola">
+      <!-- Para adicionar uma foto, coloque o arquivo em imagens/galeria/ e duplique este figure.
+           Troque o src pelo caminho da imagem e escreva uma descrição no alt e na legenda. -->
+      <figure class="empty">
+        <p>Adicione fotos na pasta <strong>imagens/galeria/</strong> e substitua este espaço pelo bloco de foto indicado no código.</p>
+      </figure>
+      <!-- Exemplo:
+      <figure class="photo">
+        <img src="imagens/galeria/festa-junina.jpg" alt="Alunos participando da festa junina" loading="lazy">
+        <figcaption>Festa junina na escola</figcaption>
+      </figure>
+      -->
+    </div>
+  </main>
+
+  <footer>Escola Córa Monteiro da Silva • Pinheiral – RJ</footer>
+</body>
+</html>
