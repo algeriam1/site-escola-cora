@@ -39,16 +39,16 @@
     main { padding: 64px 0 80px; }
     h1 { margin: 0; color: var(--navy); text-align: center; font-size: clamp(32px, 5vw, 48px); line-height: 1.15; }
     .intro { max-width: 700px; margin: 14px auto 36px; text-align: center; color: #52607f; }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 220px));
-      justify-content: center;
-      max-width: 460px;
-      margin: 0 auto;
-      gap: 14px;
-    }
     .gallery-category { padding: 24px 0; scroll-margin-top: 20px; }
     .gallery-category h2 { margin: 0 0 14px; color: var(--navy); font-size: clamp(22px, 3vw, 30px); }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 220px));
+      justify-content: start;
+      max-width: 460px;
+      margin: 0;
+      gap: 12px;
+    }
     .photo {
       overflow: hidden;
       width: 100%;
@@ -62,6 +62,15 @@
       transform: translateY(-3px);
       box-shadow: 0 10px 24px #142b7020;
     }
+    .photo-open {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: zoom-in;
+    }
+    .photo-open:focus-visible { outline: 3px solid var(--blue); outline-offset: -3px; }
     .photo img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
     .photo figcaption { padding: 10px 12px; color: var(--navy); font-weight: 700; font-size: 14px; }
     .empty {
@@ -79,12 +88,46 @@
     .empty p { margin: 0; }
     footer { padding: 22px 0; background: #101e50; color: #dbe4ff; text-align: center; }
 
+    .lightbox {
+      width: min(92vw, 1000px);
+      max-width: none;
+      max-height: 92vh;
+      padding: 48px 16px 16px;
+      border: 0;
+      border-radius: 14px;
+      background: #101e50;
+      color: #fff;
+    }
+    .lightbox::backdrop { background: rgb(5 12 35 / 85%); }
+    .lightbox img {
+      display: block;
+      max-width: 100%;
+      max-height: calc(92vh - 80px);
+      margin: 0 auto;
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      width: 36px;
+      height: 36px;
+      border: 0;
+      border-radius: 50%;
+      background: #fff;
+      color: var(--navy);
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .lightbox-caption { margin: 10px 0 0; text-align: center; }
+
     @media (max-width: 600px) {
       .nav { min-height: 68px; }
       main { padding: 44px 0 56px; }
       .gallery {
-        grid-template-columns: minmax(0, 240px);
-        max-width: 240px;
+        grid-template-columns: minmax(0, 220px);
+        max-width: 220px;
         gap: 12px;
       }
       .gallery-category { padding: 20px 0; }
@@ -107,7 +150,9 @@
       <h2>Segurança e acompanhamento</h2>
       <div class="gallery">
         <figure class="photo">
-          <img src="imagens/segurança-acompanhamento.jpeg" alt="Segurança e acompanhamento" loading="lazy">
+          <button class="photo-open" type="button" aria-label="Ampliar foto: Segurança e acompanhamento">
+            <img src="imagens/segurança-acompanhamento.jpeg" alt="Segurança e acompanhamento" loading="lazy">
+          </button>
           <figcaption>Segurança e acompanhamento</figcaption>
         </figure>
       </div>
@@ -122,7 +167,9 @@
       <h2>Seguro de acidentes</h2>
       <div class="gallery">
         <figure class="photo">
-          <img src="imagens/sobre-seguro.jpeg" alt="Seguro de acidentes" loading="lazy">
+          <button class="photo-open" type="button" aria-label="Ampliar foto: Seguro de acidentes">
+            <img src="imagens/sobre-seguro.jpeg" alt="Seguro de acidentes" loading="lazy">
+          </button>
           <figcaption>Seguro de acidentes</figcaption>
         </figure>
       </div>
@@ -147,7 +194,9 @@
       <h2>Projeto Super Cérebro</h2>
       <div class="gallery">
         <figure class="photo">
-          <img src="imagens/super-cerebro.jpeg" alt="Projeto Super Cérebro" loading="lazy">
+          <button class="photo-open" type="button" aria-label="Ampliar foto: Projeto Super Cérebro">
+            <img src="imagens/super-cerebro.jpeg" alt="Projeto Super Cérebro" loading="lazy">
+          </button>
           <figcaption>Projeto Super Cérebro</figcaption>
         </figure>
       </div>
@@ -162,7 +211,9 @@
       <h2>Sala AEE e suporte socioemocional</h2>
       <div class="gallery">
         <figure class="photo">
-          <img src="imagens/sala-aee.jpeg" alt="Sala de atendimento educacional especializado" loading="lazy">
+          <button class="photo-open" type="button" aria-label="Ampliar foto: Sala AEE">
+            <img src="imagens/sala-aee.jpeg" alt="Sala de atendimento educacional especializado" loading="lazy">
+          </button>
           <figcaption>Sala AEE</figcaption>
         </figure>
       </div>
@@ -177,7 +228,9 @@
       <h2>Esporte</h2>
       <div class="gallery">
         <figure class="photo">
-          <img src="imagens/atividades-esportivas.jpeg" alt="Atividades esportivas" loading="lazy">
+          <button class="photo-open" type="button" aria-label="Ampliar foto: Atividades esportivas">
+            <img src="imagens/atividades-esportivas.jpeg" alt="Atividades esportivas" loading="lazy">
+          </button>
           <figcaption>Atividades esportivas</figcaption>
         </figure>
       </div>
@@ -187,13 +240,42 @@
       <h2>Educação musical</h2>
       <div class="gallery">
         <figure class="photo">
-          <img src="imagens/educacao-musical.jpeg" alt="Educação musical" loading="lazy">
+          <button class="photo-open" type="button" aria-label="Ampliar foto: Educação musical">
+            <img src="imagens/educacao-musical.jpeg" alt="Educação musical" loading="lazy">
+          </button>
           <figcaption>Educação musical</figcaption>
         </figure>
       </div>
     </section>
   </main>
 
+  <dialog class="lightbox" aria-label="Foto ampliada">
+    <button class="lightbox-close" type="button" aria-label="Fechar foto ampliada">&times;</button>
+    <img src="" alt="">
+    <p class="lightbox-caption"></p>
+  </dialog>
+
   <footer>Escola Córa Monteiro da Silva • Pinheiral – RJ</footer>
+
+  <script>
+    const lightbox = document.querySelector('.lightbox');
+    const enlargedImage = lightbox.querySelector('img');
+    const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+
+    document.querySelectorAll('.photo-open').forEach((button) => {
+      button.addEventListener('click', () => {
+        const image = button.querySelector('img');
+        enlargedImage.src = image.src;
+        enlargedImage.alt = image.alt;
+        lightboxCaption.textContent = button.nextElementSibling.textContent;
+        lightbox.showModal();
+      });
+    });
+
+    lightbox.querySelector('.lightbox-close').addEventListener('click', () => lightbox.close());
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) lightbox.close();
+    });
+  </script>
 </body>
 </html>
