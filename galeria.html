@@ -41,33 +41,39 @@
     .intro { max-width: 700px; margin: 14px auto 36px; text-align: center; color: #52607f; }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 250px));
+      grid-template-columns: repeat(2, minmax(0, 220px));
       justify-content: center;
-      gap: 18px;
+      max-width: 460px;
+      margin: 0 auto;
+      gap: 14px;
     }
-    .gallery-category { padding: 28px 0; scroll-margin-top: 20px; }
-    .gallery-category h2 { margin: 0 0 16px; color: var(--navy); font-size: clamp(22px, 3vw, 30px); }
+    .gallery-category { padding: 24px 0; scroll-margin-top: 20px; }
+    .gallery-category h2 { margin: 0 0 14px; color: var(--navy); font-size: clamp(22px, 3vw, 30px); }
     .photo {
       overflow: hidden;
       width: 100%;
-      max-width: 250px;
-      min-height: 220px;
       margin: 0;
-      border-radius: 16px;
+      border-radius: 12px;
       background: #fff;
-      box-shadow: 0 8px 26px #142b7010;
+      box-shadow: 0 6px 18px #142b7014;
+      transition: transform .2s ease, box-shadow .2s ease;
     }
-    .photo img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-    .photo figcaption { padding: 12px 15px; color: var(--navy); font-weight: 700; }
+    .photo:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px #142b7020;
+    }
+    .photo img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+    .photo figcaption { padding: 10px 12px; color: var(--navy); font-weight: 700; font-size: 14px; }
     .empty {
       display: grid;
-      min-height: 150px;
+      grid-column: 1 / -1;
+      min-height: 130px;
       place-items: center;
-      padding: 20px;
+      padding: 18px;
       color: #52607f;
       text-align: center;
       border: 2px dashed #b9c7e6;
-      border-radius: 16px;
+      border-radius: 12px;
       background: #fff;
     }
     .empty p { margin: 0; }
@@ -76,7 +82,11 @@
     @media (max-width: 600px) {
       .nav { min-height: 68px; }
       main { padding: 44px 0 56px; }
-      .gallery { gap: 14px; }
+      .gallery {
+        grid-template-columns: minmax(0, 240px);
+        max-width: 240px;
+        gap: 12px;
+      }
       .gallery-category { padding: 20px 0; }
     }
   </style>
