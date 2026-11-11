@@ -7,225 +7,76 @@
   <meta name="theme-color" content="#172b70">
   <title>Escola Córa Monteiro da Silva | Pinheiral - RJ</title>
   <style>
-    :root {
-      --navy: #172b70;
-      --blue: #299fd3;
-      --yellow: #ffdf24;
-      --white: #fff;
-      --ink: #17234d;
-      --pale: #f2f6ff;
-      --green: #16864b;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
-    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: #fff; line-height: 1.6; }
-    a { color: inherit; }
-    .wrap { width: min(1120px, 92%); margin: 0 auto; }
-    .skip-link { position: absolute; top: -50px; left: 12px; z-index: 100; padding: 10px 14px; background: #fff; color: var(--navy); border-radius: 8px; }
-    .skip-link:focus { top: 12px; }
-
-    header { position: sticky; top: 0; z-index: 10; background: var(--white); box-shadow: 0 2px 14px #0e20501a; }
-    .nav { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 10px 0; }
-    .brand { display: flex; align-items: center; gap: 12px; color: var(--navy); font-weight: 800; line-height: 1.2; text-decoration: none; }
-    .brand img { width: 58px; height: 58px; object-fit: contain; border-radius: 50%; }
-    .brand small { display: block; color: #52618e; font-size: 12px; font-weight: 600; }
-    .site-nav { display: flex; align-items: center; gap: 20px; }
-    .site-nav a { color: var(--navy); font-size: 14px; font-weight: 700; text-decoration: none; }
-    .site-nav a:hover, .site-nav a:focus-visible { color: #1878a7; text-decoration: underline; text-underline-offset: 4px; }
-    .menu-toggle { display: none; }
-
-    .btn { display: inline-block; padding: 13px 20px; border: 0; border-radius: 999px; background: var(--yellow); color: var(--navy); font-weight: 800; text-align: center; text-decoration: none; box-shadow: 0 5px 0 #d7b817; transition: transform .2s ease; }
-    .btn:hover, .btn:focus-visible { transform: translateY(-2px); }
-    .btn-blue { background: var(--blue); color: #fff; box-shadow: 0 5px 0 #1878a7; }
-    .hero { overflow: hidden; background: linear-gradient(125deg, var(--navy), #203e91); color: #fff; }
-    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 25px; min-height: 560px; padding: 48px 0; }
-    .eyebrow { display: inline-block; padding: 6px 13px; border: 1px solid #ffffff45; border-radius: 99px; background: #ffffff1c; font-size: 13px; font-weight: 700; letter-spacing: .04em; }
-    h1 { margin: 18px 0; color: #fff; font-size: clamp(36px, 5vw, 60px); line-height: 1.06; }
-    h1 em { color: var(--yellow); font-style: normal; }
-    .hero p { max-width: 560px; color: #edf2ff; font-size: 19px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 26px; }
-    .mascot-frame { display: flex; align-items: center; justify-content: center; min-height: 440px; }
-    .mascot-frame img { width: min(100%, 430px); max-height: 520px; border-radius: 18px; object-fit: contain; filter: drop-shadow(0 18px 20px #07143c77); }
-
-    section { padding: 76px 0; }
-    .section-title { margin: 0 auto 14px; color: var(--navy); font-size: clamp(28px, 4vw, 40px); line-height: 1.15; text-align: center; }
-    .lead { max-width: 760px; margin: 0 auto 36px; color: #4d5a7e; font-size: 17px; text-align: center; }
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .card { padding: 24px; border: 1px solid #e2e8f5; border-radius: 18px; background: #fff; box-shadow: 0 8px 26px #142b7010; }
-    .card .icon { font-size: 30px; }
-    .card h3 { margin: 8px 0; color: var(--navy); }
-    .card p { margin: 0; color: #52607f; }
-    .soft { background: var(--pale); }
-    .programs { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .program { padding: 28px; border-top: 7px solid var(--yellow); border-radius: 20px; background: #fff; box-shadow: 0 8px 24px #142b7010; }
-    .program:nth-child(2) { border-color: var(--blue); }
-    .program h3 { margin: 0 0 8px; color: var(--navy); font-size: 23px; }
-    .feature-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .feature { display: flex; flex-direction: column; align-items: flex-start; padding: 20px; border-left: 5px solid var(--yellow); border-radius: 16px; background: #fff; box-shadow: 0 6px 20px #142b700d; }
-    .feature h3 { margin: 0 0 8px; color: var(--navy); font-size: 21px; line-height: 1.3; }
-    .feature p { margin: 0; color: #52607f; }
-    .gallery-btn { display: inline-block; margin-top: 18px; padding: 9px 16px; border-radius: 999px; background: var(--navy); color: #fff; font-size: 14px; font-weight: 700; text-decoration: none; transition: transform .2s ease, background .2s ease; }
-    .gallery-btn:hover, .gallery-btn:focus-visible { transform: translateY(-2px); background: var(--blue); }
-    .cta { padding: 68px 0; background: var(--navy); color: #fff; text-align: center; }
-    .cta h2 { margin: 0 0 12px; color: var(--yellow); font-size: clamp(28px, 4vw, 42px); line-height: 1.15; }
-    .cta p { max-width: 680px; margin: 0 auto 24px; color: #eef2ff; font-size: 17px; }
-    .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
-    footer { padding: 24px 0; background: #101e50; color: #dbe4ff; font-size: 14px; text-align: center; }
-    footer strong { color: #fff; }
-    .floating { position: fixed; right: 18px; bottom: 18px; z-index: 20; padding: 13px 18px; border-radius: 99px; background: var(--green); color: #fff; font-weight: 800; text-decoration: none; box-shadow: 0 8px 24px #0003; }
-    :focus-visible { outline: 3px solid #f0b800; outline-offset: 3px; }
-
-    @media (max-width: 760px) {
-      html { scroll-padding-top: 84px; }
-      .nav { min-height: 72px; }
-      .brand { gap: 8px; font-size: 13px; }
-      .brand img { width: 48px; height: 48px; }
-      .menu-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 44px; padding: 9px 12px; border: 2px solid #dfe6f5; border-radius: 12px; background: #fff; color: var(--navy); font: inherit; font-weight: 700; cursor: pointer; }
-      .menu-icon { display: grid; gap: 4px; }
-      .menu-icon span { display: block; width: 19px; height: 2px; border-radius: 2px; background: currentColor; }
-      .site-nav { position: absolute; top: calc(100% - 1px); right: 0; left: 0; display: none; align-items: stretch; gap: 0; padding: 8px 4%; border-top: 1px solid #e7ebf4; background: #fff; box-shadow: 0 12px 18px #0e20501a; }
-      .site-nav.is-open { display: flex; flex-direction: column; }
-      .site-nav a { padding: 13px 8px; border-bottom: 1px solid #edf0f7; font-size: 16px; }
-      .site-nav a:last-child { border-bottom: 0; }
-      .nav > .header-cta { display: none; }
-      .hero-grid { grid-template-columns: 1fr; gap: 8px; min-height: auto; padding: 42px 0 28px; text-align: center; }
-      .hero p { margin-right: auto; margin-left: auto; }
-      .hero-actions { justify-content: center; }
-      .mascot-frame { min-height: 260px; }
-      .mascot-frame img { max-height: 340px; }
-      section { padding: 56px 0; }
-      .cards { grid-template-columns: 1fr; }
-      .feature-list, .programs { grid-template-columns: 1fr; }
-      .floating { right: 12px; bottom: 12px; padding: 11px 15px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; }
-    }
+    :root{--navy:#172b70;--blue:#299fd3;--yellow:#ffdf24;--white:#fff;--ink:#17234d;--pale:#f2f6ff;--green:#16864b}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.6}a{color:inherit}.wrap{width:min(1120px,92%);margin:0 auto}
+    .skip-link{position:absolute;top:-50px;left:12px;z-index:100;padding:10px 14px;background:#fff;color:var(--navy);border-radius:8px}.skip-link:focus{top:12px}
+    header{position:sticky;top:0;z-index:10;background:var(--white);box-shadow:0 2px 14px #0e20501a}.nav{position:relative;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:10px 0}
+    .brand{display:flex;align-items:center;gap:12px;color:var(--navy);font-weight:800;line-height:1.2;text-decoration:none}.brand img{width:58px;height:58px;object-fit:contain;border-radius:50%}.brand small{display:block;color:#52618e;font-size:12px;font-weight:600}
+    .site-nav{display:flex;align-items:center;gap:20px}.site-nav a{color:var(--navy);font-size:14px;font-weight:700;text-decoration:none}.site-nav a:hover,.site-nav a:focus-visible{color:#1878a7;text-decoration:underline;text-underline-offset:4px}.menu-toggle{display:none}
+    .btn{display:inline-block;padding:13px 20px;border:0;border-radius:999px;background:var(--yellow);color:var(--navy);font-weight:800;text-align:center;text-decoration:none;box-shadow:0 5px 0 #d7b817;transition:transform .2s ease}.btn:hover,.btn:focus-visible{transform:translateY(-2px)}.btn-blue{background:var(--blue);color:#fff;box-shadow:0 5px 0 #1878a7}
+    .hero{overflow:hidden;background:linear-gradient(125deg,var(--navy),#203e91);color:#fff}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:25px;min-height:560px;padding:48px 0}
+    .eyebrow{display:inline-block;padding:8px 16px;border:1px solid #ffffff45;border-radius:99px;background:#ffffff1c;color:#fff;font-size:13px;font-weight:700;letter-spacing:.04em;text-decoration:none;transition:background .2s ease,transform .2s ease}.eyebrow:hover,.eyebrow:focus-visible{transform:translateY(-2px);background:#ffffff35}
+    h1{margin:18px 0;color:#fff;font-size:clamp(36px,5vw,60px);line-height:1.06}h1 em{color:var(--yellow);font-style:normal}.hero p{max-width:560px;color:#edf2ff;font-size:19px}.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
+    .mascot-frame{display:flex;align-items:center;justify-content:center;min-height:440px}.mascot-frame img{width:min(100%,430px);max-height:520px;border-radius:18px;object-fit:contain;filter:drop-shadow(0 18px 20px #07143c77)}
+    section{padding:76px 0}.section-title{margin:0 auto 14px;color:var(--navy);font-size:clamp(28px,4vw,40px);line-height:1.15;text-align:center}.lead{max-width:760px;margin:0 auto 36px;color:#4d5a7e;font-size:17px;text-align:center}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{padding:24px;border:1px solid #e2e8f5;border-radius:18px;background:#fff;box-shadow:0 8px 26px #142b7010}.card .icon{font-size:30px}.card h3{margin:8px 0;color:var(--navy)}.card p{margin:0;color:#52607f}.soft{background:var(--pale)}
+    .programs{display:grid;grid-template-columns:1fr 1fr;gap:20px}.program{padding:28px;border-top:7px solid var(--yellow);border-radius:20px;background:#fff;box-shadow:0 8px 24px #142b7010}.program:nth-child(2){border-color:var(--blue)}.program h3{margin:0 0 8px;color:var(--navy);font-size:23px}
+    .feature-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}.feature{display:flex;flex-direction:column;align-items:flex-start;padding:20px;border-left:5px solid var(--yellow);border-radius:16px;background:#fff;box-shadow:0 6px 20px #142b700d}.feature h3{margin:0 0 8px;color:var(--navy);font-size:21px;line-height:1.3}.feature p{margin:0;color:#52607f}
+    .gallery-btn{display:inline-block;margin-top:18px;padding:9px 16px;border-radius:999px;background:var(--navy);color:#fff;font-size:14px;font-weight:700;text-decoration:none;transition:transform .2s ease,background .2s ease}.gallery-btn:hover,.gallery-btn:focus-visible{transform:translateY(-2px);background:var(--blue)}
+    .cta{padding:68px 0;background:var(--navy);color:#fff;text-align:center}.cta h2{margin:0 0 12px;color:var(--yellow);font-size:clamp(28px,4vw,42px);line-height:1.15}.cta p{max-width:680px;margin:0 auto 24px;color:#eef2ff;font-size:17px}.contact-links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+    footer{padding:24px 0;background:#101e50;color:#dbe4ff;font-size:14px;text-align:center}footer strong{color:#fff}.floating{position:fixed;right:18px;bottom:18px;z-index:20;padding:13px 18px;border-radius:99px;background:var(--green);color:#fff;font-weight:800;text-decoration:none;box-shadow:0 8px 24px #0003}:focus-visible{outline:3px solid #f0b800;outline-offset:3px}
+    @media(max-width:760px){html{scroll-padding-top:84px}.nav{min-height:72px}.brand{gap:8px;font-size:13px}.brand img{width:48px;height:48px}.menu-toggle{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px;padding:9px 12px;border:2px solid #dfe6f5;border-radius:12px;background:#fff;color:var(--navy);font:inherit;font-weight:700;cursor:pointer}.menu-icon{display:grid;gap:4px}.menu-icon span{display:block;width:19px;height:2px;border-radius:2px;background:currentColor}.site-nav{position:absolute;top:calc(100% - 1px);right:0;left:0;display:none;align-items:stretch;gap:0;padding:8px 4%;border-top:1px solid #e7ebf4;background:#fff;box-shadow:0 12px 18px #0e20501a}.site-nav.is-open{display:flex;flex-direction:column}.site-nav a{padding:13px 8px;border-bottom:1px solid #edf0f7;font-size:16px}.site-nav a:last-child{border-bottom:0}.nav>.header-cta{display:none}.hero-grid{grid-template-columns:1fr;gap:8px;min-height:auto;padding:42px 0 28px;text-align:center}.hero p{margin-right:auto;margin-left:auto}.hero-actions{justify-content:center}.mascot-frame{min-height:260px}.mascot-frame img{max-height:340px}section{padding:56px 0}.cards{grid-template-columns:1fr}.feature-list,.programs{grid-template-columns:1fr}.floating{right:12px;bottom:12px;padding:11px 15px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important}}
   </style>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-  <header>
-    <div class="wrap nav">
-      <a class="brand" href="#inicio">
-        <img src="imagens/logo-escola-cora.jpg" alt="Logo da Escola Córa Monteiro da Silva">
-        <span>ESCOLA CÓRA MONTEIRO DA SILVA<small>Pinheiral • RJ</small></span>
-      </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
-        <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
-        <span class="menu-label">Menu</span>
-      </button>
-      <nav class="site-nav" id="menu-principal" aria-label="Navegação principal">
-        <a href="#escola">A escola</a>
-        <a href="#diferenciais">Diferenciais</a>
-        <a href="#ensino">Ensino</a>
-        <a href="#contato">Contato</a>
-      </nav>
-      <a class="btn header-cta" href="https://wa.me/5524998826636?text=Ol%C3%A1%21%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20matr%C3%ADcula." target="_blank" rel="noopener">Fale conosco</a>
-    </div>
-  </header>
-
+  <header><div class="wrap nav">
+    <a class="brand" href="#inicio"><img src="imagens/logo-escola-cora.jpg" alt="Logo da Escola Córa Monteiro da Silva"><span>ESCOLA CÓRA MONTEIRO DA SILVA<small>Pinheiral • RJ</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span class="menu-label">Menu</span></button>
+    <nav class="site-nav" id="menu-principal" aria-label="Navegação principal"><a href="#escola">A escola</a><a href="#diferenciais">Diferenciais</a><a href="#ensino">Ensino</a><a href="#contato">Contato</a></nav>
+    <a class="btn header-cta" href="https://wa.me/5524998826636?text=Ol%C3%A1%21%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20matr%C3%ADcula." target="_blank" rel="noopener">Fale conosco</a>
+  </div></header>
   <main id="conteudo">
-    <section class="hero" id="inicio">
-      <div class="wrap hero-grid">
-        <div>
-          <span class="eyebrow">MATRÍCULAS ABERTAS</span>
-          <h1>O futuro do seu filho <em>começa aqui!</em></h1>
-          <p>Do Maternal ao 9º ano, uma jornada de aprendizado, descobertas e oportunidades em Pinheiral/RJ.</p>
-          <div class="hero-actions">
-            <a class="btn" href="https://wa.me/5524998826636?text=Ol%C3%A1%21%20Quero%20informa%C3%A7%C3%B5es%20sobre%20matr%C3%ADculas." target="_blank" rel="noopener">Quero informações sobre matrículas</a>
-            <a class="btn btn-blue" href="#diferenciais">Conheça nossos diferenciais</a>
-          </div>
-        </div>
-        <div class="mascot-frame"><img src="imagens/mascote-escola-cora.jpeg" alt="Mascote robô da Escola Córa Monteiro da Silva"></div>
-      </div>
-    </section>
-
-    <section id="escola">
-      <div class="wrap">
-        <h2 class="section-title">Educação que acompanha cada descoberta</h2>
-        <p class="lead">Na Escola Córa Monteiro da Silva, aprender é abrir caminhos. Nossa proposta reúne conhecimento, tecnologia, acolhimento e experiências que ajudam cada estudante a desenvolver seu potencial.</p>
-        <div class="cards">
-          <article class="card"><div class="icon" aria-hidden="true">📚</div><h3>Aprendizagem</h3><p>Uma base acadêmica para desenvolver conhecimentos, curiosidade e autonomia.</p></article>
-          <article class="card"><div class="icon" aria-hidden="true">🌎</div><h3>Novos horizontes</h3><p>Idiomas, tecnologia e experiências que conectam os alunos ao mundo.</p></article>
-          <article class="card"><div class="icon" aria-hidden="true">💙</div><h3>Acolhimento</h3><p>Atenção ao desenvolvimento humano, à convivência e às necessidades de cada aluno.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="soft" id="diferenciais">
-      <div class="wrap">
-        <h2 class="section-title">Diferenciais que fazem a diferença</h2>
-        <p class="lead">Conheça os recursos e projetos apresentados pela escola para apoiar a aprendizagem e a tranquilidade das famílias.</p>
-        <div class="feature-list">
-          <article class="feature"><h3>🛡️ Segurança e acompanhamento</h3><p><strong>Câmeras ao vivo na sala de aula:</strong> acompanhamento da rotina pelo aplicativo da escola.</p><a class="gallery-btn" href="galeria.html#seguranca">Ver fotos</a></article>
-          <article class="feature"><h3>📱 Aplicativo integrado</h3><p>Consulta de notas, faltas, tarefas e comunicados em um só lugar.</p><a class="gallery-btn" href="galeria.html#aplicativo">Ver fotos</a></article>
-          <article class="feature"><h3>🤝 Seguro de acidentes</h3><p>Seguro de acidentes com cobertura nacional, 24 horas, conforme as condições e a rede credenciada da apólice.</p><a class="gallery-btn" href="galeria.html#seguro">Ver fotos</a></article>
-          <article class="feature"><h3>📘 Sistema de Ensino Positivo</h3><p>Material e proposta pedagógica do Sistema Positivo de Ensino.</p><a class="gallery-btn" href="galeria.html#sistema-positivo">Ver fotos</a></article>
-          <article class="feature"><h3>💻 Plataforma Online Positivo</h3><p>Videoaulas, jogos educativos, histórias digitais, QR Codes e recursos de realidade aumentada, conforme a etapa atendida.</p><a class="gallery-btn" href="galeria.html#plataforma-positivo">Ver fotos</a></article>
-          <article class="feature"><h3>🤖 Projeto Robótica</h3><p>Para estudantes do 6º ao 9º ano: programação, criação de robôs, raciocínio lógico e trabalho em equipe.</p><a class="gallery-btn" href="galeria.html#robotica">Ver fotos</a></article>
-          <article class="feature"><h3>🧠 Projeto Super Cérebro</h3><p>Para estudantes do 1º ao 5º ano: desafios, jogos e Soroban para estimular concentração e agilidade mental.</p><a class="gallery-btn" href="galeria.html#super-cerebro">Ver fotos</a></article>
-          <article class="feature"><h3>🏅 Olimpíadas nacionais</h3><p>Incentivo à participação no Concurso Canguru de Matemática e na Olimpíada Brasileira de Astronomia (OBA).</p><a class="gallery-btn" href="galeria.html#olimpiadas">Ver fotos</a></article>
-          <article class="feature"><h3>❤️ Sala AEE e suporte socioemocional</h3><p>Atendimento Educacional Especializado e acompanhamento psicopedagógico, conforme a necessidade dos alunos.</p><a class="gallery-btn" href="galeria.html#aee">Ver fotos</a></article>
-          <article class="feature"><h3>🌐 Inglês e Espanhol</h3><p>Aulas de idiomas na grade curricular para ampliar repertório e horizontes culturais.</p><a class="gallery-btn" href="galeria.html#idiomas">Ver fotos</a></article>
-          <article class="feature"><h3>⚽ Esporte</h3><p>Aulas específicas com foco em técnica, disciplina, movimento e saúde, além da Educação Física.</p><a class="gallery-btn" href="galeria.html#esporte">Ver fotos</a></article>
-          <article class="feature"><h3>🎵 Educação musical</h3><p>Vivências musicais para estimular criatividade, sensibilidade e coordenação motora.</p><a class="gallery-btn" href="galeria.html#educacao-musical">Ver fotos</a></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="ensino">
-      <div class="wrap">
-        <h2 class="section-title">Uma jornada de aprendizado</h2>
-        <p class="lead">Etapas para crescer, aprender e conquistar novas possibilidades.</p>
-        <div class="programs">
-          <article class="program"><h3>Educação Infantil</h3><p>Do Maternal, com experiências que valorizam as descobertas, a convivência, a criatividade e o desenvolvimento integral da criança.</p></article>
-          <article class="program"><h3>Ensino Fundamental — 1º ao 9º ano</h3><p>Formação acadêmica, desenvolvimento do pensamento, ampliação de conhecimentos e projetos que incentivam a participação dos estudantes.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta" id="contato">
-      <div class="wrap">
-        <h2>Vamos construir o futuro juntos?</h2>
-        <p>Entre em contato com a Escola Córa Monteiro da Silva e saiba mais sobre nossa proposta educacional e as matrículas.</p>
-        <div class="contact-links">
-          <a class="btn" href="https://wa.me/5524998826636?text=Ol%C3%A1%21%20Quero%20garantir%20a%20matr%C3%ADcula%20do%20meu%20filho." target="_blank" rel="noopener">🟢 Quero informações sobre matrículas</a>
-          <a class="btn btn-blue" href="https://www.instagram.com/escolacorapinheiral/" target="_blank" rel="noopener">📸 Acompanhe no Instagram</a>
-        </div>
-      </div>
-    </section>
+    <section class="hero" id="inicio"><div class="wrap hero-grid"><div>
+      <a class="eyebrow" href="https://wa.me/5524998826636?text=Ol%C3%A1%21%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20matr%C3%ADculas." target="_blank" rel="noopener">MATRÍCULAS ABERTAS</a>
+      <h1>O futuro do seu filho <em>começa aqui!</em></h1>
+      <p>Do Maternal ao 9º ano, uma jornada de aprendizado, descobertas e oportunidades em Pinheiral/RJ.</p>
+      <div class="hero-actions"><a class="btn" href="https://wa.me/5524998826636?text=Ol%C3%A1%21%20Quero%20informa%C3%A7%C3%B5es%20sobre%20matr%C3%ADculas." target="_blank" rel="noopener">Quero informações sobre matrículas</a><a class="btn btn-blue" href="#diferenciais">Conheça nossos diferenciais</a></div>
+    </div><div class="mascot-frame"><img src="imagens/mascote-escola-cora.jpeg" alt="Mascote robô da Escola Córa Monteiro da Silva"></div></div></section>
+    <section id="escola"><div class="wrap"><h2 class="section-title">Educação que acompanha cada descoberta</h2><p class="lead">Na Escola Córa Monteiro da Silva, aprender é abrir caminhos. Nossa proposta reúne conhecimento, tecnologia, acolhimento e experiências que ajudam cada estudante a desenvolver seu potencial.</p><div class="cards">
+      <article class="card"><div class="icon" aria-hidden="true">📚</div><h3>Aprendizagem</h3><p>Uma base acadêmica para desenvolver conhecimentos, curiosidade e autonomia.</p></article><article class="card"><div class="icon" aria-hidden="true">🌎</div><h3>Novos horizontes</h3><p>Idiomas, tecnologia e experiências que conectam os alunos ao mundo.</p></article><article class="card"><div class="icon" aria-hidden="true">💙</div><h3>Acolhimento</h3><p>Atenção ao desenvolvimento humano, à convivência e às necessidades de cada aluno.</p></article>
+    </div></div></section>
+    <section class="soft" id="diferenciais"><div class="wrap"><h2 class="section-title">Diferenciais que fazem a diferença</h2><p class="lead">Conheça os recursos e projetos apresentados pela escola para apoiar a aprendizagem e a tranquilidade das famílias.</p><div class="feature-list">
+      <article class="feature"><h3>🛡️ Segurança e acompanhamento</h3><p><strong>Câmeras ao vivo na sala de aula:</strong> acompanhamento da rotina pelo aplicativo da escola.</p><a class="gallery-btn" href="galeria.html#seguranca">Ver fotos</a></article>
+      <article class="feature"><h3>📱 Aplicativo integrado</h3><p>Consulta de notas, faltas, tarefas e comunicados em um só lugar.</p><a class="gallery-btn" href="galeria.html#aplicativo">Ver fotos</a></article>
+      <article class="feature"><h3>🤝 Seguro de acidentes</h3><p>Seguro de acidentes com cobertura nacional, 24 horas, conforme as condições e a rede credenciada da apólice.</p><a class="gallery-btn" href="galeria.html#seguro">Ver fotos</a></article>
+      <article class="feature"><h3>📘 Sistema de Ensino Positivo</h3><p>Material e proposta pedagógica do Sistema Positivo de Ensino.</p><a class="gallery-btn" href="galeria.html#sistema-positivo">Ver fotos</a></article>
+      <article class="feature"><h3>💻 Plataforma Online Positivo</h3><p>Videoaulas, jogos educativos, histórias digitais, QR Codes e recursos de realidade aumentada, conforme a etapa atendida.</p><a class="gallery-btn" href="galeria.html#plataforma-positivo">Ver fotos</a></article>
+      <article class="feature"><h3>🤖 Projeto Robótica</h3><p>Para estudantes do 6º ao 9º ano: programação, criação de robôs, raciocínio lógico e trabalho em equipe.</p><a class="gallery-btn" href="galeria.html#robotica">Ver fotos</a></article>
+      <article class="feature"><h3>🧠 Projeto Super Cérebro</h3><p>Para estudantes do 1º ao 5º ano: desafios, jogos e Soroban para estimular concentração e agilidade mental.</p><a class="gallery-btn" href="galeria.html#super-cerebro">Ver fotos</a></article>
+      <article class="feature"><h3>🏅 Olimpíadas nacionais</h3><p>Incentivo à participação no Concurso Canguru de Matemática e na Olimpíada Brasileira de Astronomia (OBA).</p><a class="gallery-btn" href="galeria.html#olimpiadas">Ver fotos</a></article>
+      <article class="feature"><h3>❤️ Sala AEE e suporte socioemocional</h3><p>Atendimento Educacional Especializado e acompanhamento psicopedagógico, conforme a necessidade dos alunos.</p><a class="gallery-btn" href="galeria.html#aee">Ver fotos</a></article>
+      <article class="feature"><h3>🌐 Inglês e Espanhol</h3><p>Aulas de idiomas na grade curricular para ampliar repertório e horizontes culturais.</p><a class="gallery-btn" href="galeria.html#idiomas">Ver fotos</a></article>
+      <article class="feature"><h3>⚽ Esporte</h3><p>Aulas específicas com foco em técnica, disciplina, movimento e saúde, além da Educação Física.</p><a class="gallery-btn" href="galeria.html#esporte">Ver fotos</a></article>
+      <article class="feature"><h3>🎵 Educação musical</h3><p>Vivências musicais para estimular criatividade, sensibilidade e coordenação motora.</p><a class="gallery-btn" href="galeria.html#educacao-musical">Ver fotos</a></article>
+    </div></div></section>
+    <section id="ensino"><div class="wrap"><h2 class="section-title">Uma jornada de aprendizado</h2><p class="lead">Etapas para crescer, aprender e conquistar novas possibilidades.</p><div class="programs">
+      <article class="program"><h3>Educação Infantil</h3><p>Do Maternal, com experiências que valorizam as descobertas, a convivência, a criatividade e o desenvolvimento integral da criança.</p></article><article class="program"><h3>Ensino Fundamental — 1º ao 9º ano</h3><p>Formação acadêmica, desenvolvimento do pensamento, ampliação de conhecimentos e projetos que incentivam a participação dos estudantes.</p></article>
+    </div></div></section>
+    <section class="cta" id="contato"><div class="wrap"><h2>Vamos construir o futuro juntos?</h2><p>Entre em contato com a Escola Córa Monteiro da Silva e saiba mais sobre nossa proposta educacional e as matrículas.</p><div class="contact-links">
+      <a class="btn" href="https://wa.me/5524998826636?text=Ol%C3%A1%21%20Quero%20garantir%20a%20matr%C3%ADcula%20do%20meu%20filho." target="_blank" rel="noopener">🟢 Quero informações sobre matrículas</a><a class="btn btn-blue" href="https://www.instagram.com/escolacorapinheiral/" target="_blank" rel="noopener">📸 Acompanhe no Instagram</a>
+    </div></div></section>
   </main>
   <footer><div class="wrap"><strong>Escola Córa Monteiro da Silva</strong><br>Pinheiral – RJ<br>Instagram: @escolacorapinheiral • WhatsApp: (24) 99882-6636</div></footer>
   <a class="floating" href="https://wa.me/5524998826636?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20a%20escola." target="_blank" rel="noopener" aria-label="Fale com a escola pelo WhatsApp">WhatsApp</a>
-
   <script>
-    const menuButton = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('#menu-principal');
-    const menuLabel = menuButton.querySelector('.menu-label');
-
-    function setMenuOpen(isOpen) {
-      menuButton.setAttribute('aria-expanded', String(isOpen));
-      menu.classList.toggle('is-open', isOpen);
-      menuLabel.textContent = isOpen ? 'Fechar' : 'Menu';
-    }
-
-    menuButton.addEventListener('click', () => {
-      setMenuOpen(menuButton.getAttribute('aria-expanded') !== 'true');
-    });
-
-    menu.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => setMenuOpen(false));
-    });
-
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') setMenuOpen(false);
-    });
-
-    window.matchMedia('(min-width: 761px)').addEventListener('change', () => setMenuOpen(false));
+    const menuButton=document.querySelector('.menu-toggle');const menu=document.querySelector('#menu-principal');const menuLabel=menuButton.querySelector('.menu-label');
+    function setMenuOpen(isOpen){menuButton.setAttribute('aria-expanded',String(isOpen));menu.classList.toggle('is-open',isOpen);menuLabel.textContent=isOpen?'Fechar':'Menu'}
+    menuButton.addEventListener('click',()=>setMenuOpen(menuButton.getAttribute('aria-expanded')!=='true'));
+    menu.querySelectorAll('a').forEach((link)=>link.addEventListener('click',()=>setMenuOpen(false)));
+    document.addEventListener('keydown',(event)=>{if(event.key==='Escape')setMenuOpen(false)});
+    window.matchMedia('(min-width: 761px)').addEventListener('change',()=>setMenuOpen(false));
   </script>
 </body>
 </html>
